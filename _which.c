@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char* _which(const char *cmd)
+char* _which(char *cmd)
 {
     char *path = NULL;
     char *token = NULL;

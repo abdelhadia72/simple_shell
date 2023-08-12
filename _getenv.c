@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char* _getenv(const char *target_env) {
+char* _getenv(char *target_env) {
     unsigned int i = 0;
     extern char **environ;
     char *token = NULL;

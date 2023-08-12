@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void runcmd(const char *cmd)
+void runcmd(char *cmd)
 {
     char *path = NULL;
     pid_t pid = fork();

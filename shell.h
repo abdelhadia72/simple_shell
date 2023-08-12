@@ -15,9 +15,9 @@
 #define FAILURE 1
 
 /* helper functions */
-int _which(char *commend);
-char* _getenv(const char *target_env);
-void runcmd(const char *cmd);
+char* _which(char *commend);
+char* _getenv(char *target_env);
+void runcmd(char *cmd);
 void splitString(char *input, char *delimiter);
 
 #endif

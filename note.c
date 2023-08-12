@@ -6,7 +6,6 @@
 //& _which  : get the path of the commed
 
 
-
 //? Function to add .
 // strcmp
 // strtok

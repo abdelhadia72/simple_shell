@@ -17,5 +17,6 @@
 /* helper functions */
 int _which(char *commend);
 char* _getenv(const char *target_env);
+void runcmd(const char *cmd);
 
 #endif

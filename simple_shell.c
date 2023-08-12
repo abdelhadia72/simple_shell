@@ -7,7 +7,7 @@ int main()
 
 	while (1)
 	{
-		// display the promet 
+		// display the promet
 		printf("#cisfun$ ");
 		fflush(stdout);
 
@@ -17,7 +17,6 @@ int main()
 			// handle Ctrl+D
 			break;
 		}
-
 		// execute command using execve
 		pid_t child_pid = fork();
 

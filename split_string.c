@@ -1,41 +1,54 @@
 #include "shell.h"
 
-void splitString(char *input, char *delimiter) {
-	char *buf = strdup(input);
-	if (buf == NULL) {
-		perror("eror");
-		return;
-	}
+void splitString(char *input, char *delimiter)
+{
+    char *buf = strdup(input);
+    int tokenCount = 0;
+    char *p;
+    char **array;
+    char *inputCopy;
+    int i;
 
-	int tokenCount = 0;
-	char *p = strtok(buf, delimiter);
+    if (buf == NULL)
+    {
+        perror("error");
+        return;
+    }
 
-	while (p != NULL) {
-		tokenCount++;
-		p = strtok(NULL, delimiter);
-	}
+    p = strtok(buf, delimiter);
 
-	char **array = (char **)malloc(tokenCount * sizeof(char *));
-	if (array == NULL) {
-		perror("eror");
-		free(buf);
-		return;
-	}
+    while (p != NULL)
+    {
+        tokenCount++;
+        p = strtok(NULL, delimiter);
+    }
 
-	char *inputCopy = strdup(input);
-	p = strtok(inputCopy, delimiter);
-	for (int i = 0; i < tokenCount; ++i) {
-		array[i] = strdup(p);
-		p = strtok(NULL, delimiter);
-	}
+    array = (char **)malloc(tokenCount * sizeof(char *));
 
-	free(inputCopy);
+    if (array == NULL)
+    {
+        perror("error");
+        free(buf);
+        return;
+    }
 
-	for (int i = 0; i < tokenCount; ++i) {
-		printf("%s\n", array[i]);
-		free(array[i]);
-	}
+    inputCopy = strdup(input);
 
-	free(array);
-	free(buf);
+    p = strtok(inputCopy, delimiter);
+    for (i = 0; i < tokenCount; ++i)
+    {
+        array[i] = strdup(p);
+        p = strtok(NULL, delimiter);
+    }
+
+    free(inputCopy);
+
+    for (i = 0; i < tokenCount; ++i)
+    {
+        printf("%s\n", array[i]);
+        free(array[i]);
+    }
+
+    free(array);
+    free(buf);
 }

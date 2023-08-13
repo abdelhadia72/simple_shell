@@ -11,21 +11,24 @@ char* _which(char *cmd)
     if (!cmd)
         return NULL;
 
-    path = _getenv("PATH");
+    path = getenv("PATH");
     if (!path)
+    {
         return NULL;
+    }
 
     cp_cmd = strdup(cmd);
-    token = strtok(cp_cmd, sp);
+    token = strtok(path, sp);
+
     while (token)
     {
         holder = (char *)malloc(strlen(token) + strlen(cmd) + 2);
         strcpy(holder, token);
         strcat(holder, "/");
         strcat(holder, cmd);
-
         if (access(holder, X_OK) == 0)
         {
+        
             free(cp_cmd);
             return (holder);
         }
@@ -33,9 +36,8 @@ char* _which(char *cmd)
         free(holder);
         token = strtok(NULL, sp);
     }
-
+    
     free(cp_cmd);
     perror("which");
     return (NULL);
 }
-

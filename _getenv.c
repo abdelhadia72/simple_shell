@@ -21,4 +21,3 @@ char* _getenv(char *target_env) {
 
     return (NULL);
 }
-

@@ -11,7 +11,6 @@ void runcmd(char *cmd)
     if (pid == 0)
     {
         path = _which(cmd);
-
         if (path)
         {
             argv[0] = path;

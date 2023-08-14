@@ -23,4 +23,3 @@ char *_strtok(char *str, const char *delim);
 char* _getline(size_t buffer_size);
 
 #endif
-

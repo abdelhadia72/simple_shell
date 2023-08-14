@@ -14,7 +14,7 @@ int main(int ac, char **av)
         if(strcmp(buffer, "exit") == 0)
         {
             free(buffer);
-            exit(1);
+            perror(buffer);
             break;
         }
         

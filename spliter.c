@@ -20,6 +20,9 @@ char **spliter(char *buffer)
     int i = 0;
     char **argv = malloc(sizeof(char *) * n_char);
 
+
+    //! free before redup
+    free(copy_buffer);
     copy_buffer = strdup(buffer);
     token = strtok(copy_buffer, sp);
     for (i = 0; token != NULL; i++)

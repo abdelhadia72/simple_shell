@@ -30,7 +30,6 @@ char* which(char *cmd)
         {
         
             free(cp_cmd);
-            printf(">>> %s\n", holder);
             return (holder);
         }
 

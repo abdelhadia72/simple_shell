@@ -1,1 +1,12 @@
-// ! don't forget to make you getenv (not now).
+/*
+
+![-] handler change dir
+![-] getenv
+![-] Implement the env
+*[-] getline
+*[-] strtok
+^[-] cleanup the code
+^[-] C89
+^[-] betty style
+
+*/

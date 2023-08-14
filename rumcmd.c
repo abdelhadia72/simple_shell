@@ -4,8 +4,13 @@ void runcmd(char **args)
 {
     char *path = NULL;
     pid_t pid = fork();
-    // char **argv = args;
-    char **envp = { NULL };
+    
+    char *envp[] = {
+        "TERM=xterm",
+        "PATH=/usr/bin",
+        NULL
+    };
+    // char *envp[] = { "PATH=usr/bin/", NULL };
     int stat;
 
     if (pid == 0)

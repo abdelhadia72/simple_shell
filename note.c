@@ -1,12 +1,13 @@
-/*
+/* Tasks
 
-![-] handler change dir
+![x] handler change dir
 ![-] getenv
-![-] Implement the env
+![-] implement the env
+![-] fix memory leak 
 *[-] getline
 *[-] strtok
 ^[-] cleanup the code
-^[-] C89
+^[-] check C89
 ^[-] betty style
 
 */

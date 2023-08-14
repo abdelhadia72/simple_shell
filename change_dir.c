@@ -2,5 +2,11 @@
 
 void change_dir(char **args)
 {
-    printf("Not changing directory yet\n");
+    if (args[1] == NULL) {
+        exit(FAILURE);
+    } else {
+        if (chdir(args[1]) == -1) {
+            perror("cd");
+        }
+    }
 }

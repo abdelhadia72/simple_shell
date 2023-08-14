@@ -7,6 +7,9 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+/* environment */
+extern char **environ;
+
 /* macros */
 #define SUCCESS 0
 #define FAILURE -1

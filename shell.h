@@ -7,7 +7,12 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+/* macros */
+#define SUCCESS 0
+#define FAILURE -1
 
+/* functions */
+char **spliter(char *buffer);
 
 #endif
 

@@ -16,6 +16,8 @@ extern char **environ;
 
 /* functions */
 char **spliter(char *buffer);
-
+char* which(char *cmd);
+void runcmd(char **args);
+void change_dir(char **args);
 #endif
 

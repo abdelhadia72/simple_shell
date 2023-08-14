@@ -42,9 +42,9 @@ char* which(char *cmd)
     return (NULL);
 }
 
-int main(void)
-{
-    which("cat");
-    return (0);
-}
+// int main(void)
+// {
+//     which("cat");
+//     return (0);
+// }
 //! you have to make your own getenv ??!

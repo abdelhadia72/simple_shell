@@ -55,3 +55,17 @@ char* _getline(size_t buffer_size)
 
 /* TESTING THE GET LINE FUNCTION */
 
+int main() {
+	size_t buffer_size = 256;
+
+	while (1) {
+		char* line = _getline(buffer_size);
+		if (line == NULL) {
+			break;
+		}
+		printf("Line: %s\n", line);
+		free(line);
+	}
+
+	return 0;
+}

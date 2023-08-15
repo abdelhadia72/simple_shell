@@ -20,19 +20,25 @@ int main(int ac, char **av)
             break;
         }
         
-        
-        args = spliter(buffer);
-        
-        if (strcmp(args[0], "cd") == 0) {
-            change_dir(args);
-        }
-        else
+        // check on spaces
+        if(!space_check(buffer))
         {
-            runcmd(args);
+            args = spliter(buffer);
+            
+            if (strcmp(args[0], "cd") == 0) {
+                change_dir(args);
+            }
+            else
+            {
+                runcmd(args);
+            }
+        }else
+        {
+            printf("%s\n", buffer);
         }
         
-    if (isatty(0)) {
-        _puts("$ ");
-    }
+        if (isatty(0)) {
+            _puts("$ ");
+        }
     }
 }

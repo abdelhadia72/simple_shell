@@ -19,8 +19,10 @@ char **spliter(char *buffer);
 char* which(char *cmd);
 void runcmd(char **args);
 void change_dir(char **args);
+int space_check(char *buffer);
 char *_strtok(char *str, const char *delim);
 char* _getline(size_t buffer_size);
+
 
 /* help function */
 int _putchar(char c);

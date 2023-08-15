@@ -34,17 +34,17 @@ char *_strtok(char *str, const char *delim) {
 
 /* FOR TESTING FUNCTION */
 
-int main()
-{
-	char str[] = "Hello, world! This is a test.";
-	const char delim[] = " ";
+// int main()
+// {
+// 	char str[] = "Hello, world! This is a test.";
+// 	const char delim[] = " ";
 
-	char *token = _strtok(str, delim);
-	while (token != NULL)
-	{
-		printf("Token: %s\n", token);
-		token = _strtok(NULL, delim);
-	}
+// 	char *token = _strtok(str, delim);
+// 	while (token != NULL)
+// 	{
+// 		printf("Token: %s\n", token);
+// 		token = _strtok(NULL, delim);
+// 	}
 
-	return 0;
-}
+// 	return 0;
+// }

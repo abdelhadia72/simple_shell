@@ -35,13 +35,6 @@ char **spliter(char *buffer)
     argv[i] = NULL;
 
     free(copy_buffer);
-    
-    // int o = 0;
-    // while(argv[o])
-    // {
-    //     printf("-> %s\n", argv[o]);
-    //     o++;
-    // }
 
     return (argv);
 }

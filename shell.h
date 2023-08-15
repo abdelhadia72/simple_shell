@@ -22,4 +22,8 @@ void change_dir(char **args);
 char *_strtok(char *str, const char *delim);
 char* _getline(size_t buffer_size);
 
+/* help function */
+int _putchar(char c);
+void _puts(char *str);
+
 #endif

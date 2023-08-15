@@ -7,7 +7,7 @@ int main(int ac, char **av)
     size_t size = 0;
     
     if (isatty(0)) {
-        printf("$ ");
+        _puts("$ ");
     }
     while(getline(&buffer, &size, stdin) != EOF)
     {
@@ -32,7 +32,7 @@ int main(int ac, char **av)
         }
         
     if (isatty(0)) {
-        printf("$ ");
+        _puts("$ ");
     }
     }
 }

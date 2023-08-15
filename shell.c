@@ -6,7 +6,9 @@ int main(int ac, char **av)
     char **args = {NULL};
     size_t size = 0;
     
-    printf("$ ");
+    if (isatty(0)) {
+        printf("$ ");
+    }
     while(getline(&buffer, &size, stdin) != EOF)
     {
         buffer[strlen(buffer) - 1] = '\0';
@@ -18,16 +20,19 @@ int main(int ac, char **av)
             break;
         }
         
-        //! we didn't make it yet...
-        //! runcmd(buffer)
         
         args = spliter(buffer);
+        
         if (strcmp(args[0], "cd") == 0) {
             change_dir(args);
-        } else {
+        }
+        else
+        {
             runcmd(args);
         }
+        
+    if (isatty(0)) {
         printf("$ ");
     }
+    }
 }
-

@@ -14,13 +14,13 @@ void change_dir(char **args)
         }
     }else if(strcmp(path, "~") == 0)
     {
+        //! fix me work also on [cd without args].  (cd ~) => take you home,  (cd) => take you home.
         if (chdir(getenv("HOME")) == -1) {
             perror("cd");
         }
     }
     else
     {
-    
         getcwd(oldpwd, sizeof(oldpwd));
         setenv("OLDPWD", oldpwd, 1);
         if (path == NULL) {

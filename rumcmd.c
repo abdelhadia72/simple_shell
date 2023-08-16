@@ -32,12 +32,9 @@ void runcmd(char **args)
             perror("execve");
             exit(1);
         }
-        
     }
     else if (pid > 0)
     {   
-        
-    
         wait(NULL);
         waitpid(pid, &stat, 0);
     }

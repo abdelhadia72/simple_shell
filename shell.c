@@ -1,5 +1,7 @@
 #include "shell.h"
 
+int exit_code;
+
 int main(int ac, char **av)
 {
     char *buffer = NULL;
@@ -17,9 +19,11 @@ int main(int ac, char **av)
         {
             free(buffer);
             perror(buffer);
+            exit(98);
             break;
         }
         
+
         // check on spaces
         if(!space_check(buffer))
         {
@@ -27,6 +31,12 @@ int main(int ac, char **av)
             
             if (strcmp(args[0], "cd") == 0) {
                 change_dir(args);
+            }else  if (strcmp(buffer, "echo $?") == 0)
+            {
+                printf("%d\n",exit_code);
+            }else  if (strcmp(buffer, "echo $$") == 0)
+            {
+                printf("%d\n",getppid());
             }
             else
             {
@@ -34,7 +44,7 @@ int main(int ac, char **av)
             }
         }else
         {
-            printf("%s\n", buffer);
+            // printf("%s\n", buffer);
         }
         
         if (isatty(0)) {

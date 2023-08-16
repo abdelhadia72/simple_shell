@@ -7,12 +7,15 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+/* exit */
+// #define EXIT_CODE 0
 /* environment */
 extern char **environ;
 
 /* macros */
 #define SUCCESS 0
 #define FAILURE -1
+
 
 /* functions */
 char **spliter(char *buffer);

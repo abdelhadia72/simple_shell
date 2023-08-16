@@ -1,5 +1,6 @@
 #include "shell.h"
 
+    extern int exit_code;
 char* which(char *cmd)
 {
     char *path = NULL;
@@ -38,13 +39,9 @@ char* which(char *cmd)
     }
     
     free(cp_cmd);
+    exit_code = 1;
     perror("which");
     return (NULL);
 }
 
-// int main(void)
-// {
-//     which("cat");
-//     return (0);
-// }
 //! you have to make your own getenv ??!

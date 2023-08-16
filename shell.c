@@ -38,7 +38,7 @@ int main(int ac, char **av)
 
 			if (args[1] != NULL)
 			{
-				exit_status = atoi(args[1]);
+				exit_status = _atoi(args[1]);
 			}
 
 			exit(exit_status);

@@ -26,3 +26,15 @@ char *_strcpy(char *dest, char *src)
 
 	return (dest);
 }
+
+/* function the copares two string */
+
+int _strcmp(char *s1, char *s2)
+{
+	while (*s1 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}

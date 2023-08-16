@@ -21,9 +21,9 @@ int main(int ac, char **av)
 	}
 	while(getline(&buffer, &size, stdin) != EOF)
 	{
-		buffer[strlen(buffer) - 1] = '\0';
+		buffer[_strlen(buffer) - 1] = '\0';
 		
-		if(strcmp(buffer, "exit") == 0)
+		if(_strcmp(buffer, "exit") == 0)
 		{
 			/*
 			free(buffer);
@@ -50,15 +50,15 @@ int main(int ac, char **av)
 		{
 			args = spliter(buffer);
 			
-			if (strcmp(args[0], "cd") == 0)
+			if (_strcmp(args[0], "cd") == 0)
 			{
 				change_dir(args);
 			}
-			else if(strcmp(buffer, "echo $?") == 0)
+			else if(_strcmp(buffer, "echo $?") == 0)
 			{
 				printf("exit %d", exit_status);
 			}
-			else if (strcmp(buffer, "echo $$") == 0)
+			else if (_strcmp(buffer, "echo $$") == 0)
 			{
 				printf("%d\n",getppid());
 			}

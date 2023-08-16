@@ -8,9 +8,12 @@
 #include <sys/wait.h>
 
 /* exit */
-// #define EXIT_CODE 0
+extern int exit_status;
+
+
 /* environment */
 extern char **environ;
+
 
 /* macros */
 #define SUCCESS 0

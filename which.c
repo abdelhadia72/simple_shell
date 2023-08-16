@@ -1,6 +1,8 @@
 #include "shell.h"
 
-    extern int exit_code;
+// GB var
+int exit_status = 77;
+
 char* which(char *cmd)
 {
     char *path = NULL;
@@ -39,7 +41,6 @@ char* which(char *cmd)
     }
     
     free(cp_cmd);
-    exit_code = 1;
     perror("which");
     return (NULL);
 }

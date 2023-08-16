@@ -1,6 +1,5 @@
 #include "shell.h"
 
-int exit_code;
 
 int main(int ac, char **av)
 {
@@ -23,7 +22,6 @@ int main(int ac, char **av)
             break;
         }
         
-
         // check on spaces
         if(!space_check(buffer))
         {
@@ -33,7 +31,8 @@ int main(int ac, char **av)
                 change_dir(args);
             }else  if (strcmp(buffer, "echo $?") == 0)
             {
-                printf("%d\n",exit_code);
+                
+                printf("exit %d", exit_status);
             }else  if (strcmp(buffer, "echo $$") == 0)
             {
                 printf("%d\n",getppid());
@@ -52,3 +51,7 @@ int main(int ac, char **av)
         }
     }
 }
+
+
+// if (WIFEXITEO(wstatus))
+// int statusCode = WEXITSTATUS(wstatus);

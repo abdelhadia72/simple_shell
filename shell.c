@@ -25,9 +25,23 @@ int main(int ac, char **av)
 		
 		if(strcmp(buffer, "exit") == 0)
 		{
+			/*
 			free(buffer);
 			perror(buffer);
 			exit(98);
+			break;
+			*/
+
+			// try to handle arguments for the built-in exit task 8
+			free(buffer);
+			exit_status = 0;
+
+			if (args[1] != NULL)
+			{
+				exit_status = atoi(args[1]);
+			}
+
+			exit(exit_status);
 			break;
 		}
 		

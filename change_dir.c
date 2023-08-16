@@ -3,18 +3,43 @@
 void change_dir(char **args)
 {
     int i = 0;
-
-    if (args[1] == NULL) {
-        exit(FAILURE);
-    } else {
-        if (chdir(args[1]) == -1) {
+    char oldpwd[100];
+    char *path = args[1];
+    
+    getcwd(oldpwd, sizeof(oldpwd));
+    setenv("OLDPWD", oldpwd, 1);
+    
+    printf("oldpwd %s\n", getenv("OLDPWD"));
+    if(strcmp(path, "-") == 0)
+    {
+        //! fix me
+        printf("changed to the preiv dir\n");
+        if (chdir(getenv("OLDPWD")) == -1) {
             perror("cd");
         }
-        while(args[i])
-        {
-            free(args[i]);
-            i++;
+    } else
+    {
+        if (path == NULL) {
+            exit(FAILURE);
+        } else {
+            if (chdir(path) == -1) {
+                perror("cd");
+            }
         }
-        free(args);
     }
+
+    
+    /* free mem */
+    while(args[i])
+    {
+        free(args[i]);
+        i++;
+    }
+    free(args);
+    
 }
+
+// get the current directory
+// set it the the old_pwd 
+// then change the directory
+//! remove the repat of the code 

@@ -34,4 +34,7 @@ char* _getline(size_t buffer_size);
 int _putchar(char c);
 void _puts(char *str);
 
+/* Str function */
+int _strlen(char *str);
+
 #endif

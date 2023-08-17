@@ -1,6 +1,10 @@
 #include "shell.h"
 
-/* calclute the lenght of string */
+/**
+ *  _strlen -  calculates the length of a string.
+ * @str: pointer to a string.
+ * Return: i.
+ */
 
 int _strlen(char *str)
 {
@@ -11,7 +15,14 @@ int _strlen(char *str)
 	return (i);
 }
 
-/* copie str to another */
+/**
+  * _strcpy - copys str to another
+  * @dest: destination string
+  * @src: the str that we gonna copy
+  *
+  * Return: the pointer to dst
+  */
+
 
 char *_strcpy(char *dest, char *src)
 {
@@ -27,7 +38,13 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-/* function the copares two string */
+/**
+ * _strncmp - compares first n bytes of s1 and s2
+ * @s1: string 1
+ * @s2: string 2
+ * @n: number of bytes to compare
+ * Return: int
+ */
 
 int _strcmp(char *s1, char *s2)
 {

@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ *  _puts - print string
+ *
+ * @str: pointer to string
+ *
+ */
+
 void _puts(char *str)
 {
 	int i = 0;
@@ -9,15 +16,28 @@ void _puts(char *str)
 		_putchar(str[i]);
 		i++;
 	}
-//	_putchar('\n');
 }
+
+/**
+ * _putchar - writes the character c to stdout
+ *
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ */
 
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
-/* make the atoi */
+/**
+ * _atoi - converts string to an integer
+ *
+ * @nptr: string to be converted
+ *
+ * Return: converted integer
+ */
 
 int _atoi(char *nptr)
 {
@@ -35,6 +55,5 @@ int _atoi(char *nptr)
 		n = (n * 10) + (nptr[i] - '0');
 		i++;
 	}
-
 	return (n);
 }

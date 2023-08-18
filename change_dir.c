@@ -1,8 +1,7 @@
 #include "shell.h"
 
-void change_dir(char **args)
-{
-	 int i = 0;
+void change_dir(char **args) {
+    int i = 0;
     char oldpwd[100];
     char *path = args[1];
 

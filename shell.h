@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <pwd.h>
 
 /* exit */
 extern int exit_status;

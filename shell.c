@@ -30,7 +30,6 @@ int main(int ac, char **av)
 		{
 			free(buffer);
 			exit(2);
-			return (0);
 			break;
 		}
 		if (!space_check(buffer))

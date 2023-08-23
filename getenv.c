@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char *_getenv(char *name)
+char *_getenv(const char *name)
 {
 	int i = 0;
 	ssize_t len = _strlen(name);

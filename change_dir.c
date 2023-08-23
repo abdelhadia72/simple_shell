@@ -18,7 +18,7 @@ void change_dir(char **args)
         }
         else
         {
-            fprintf(stderr, "cd: could not determine home directory\n");
+             _puts("cd: could not determine home directory");
         }
     }
     else if (strcmp(args[1], "-") == 0)

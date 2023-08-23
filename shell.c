@@ -39,10 +39,6 @@ int main(int ac, char **av)
 
 			if (_strcmp(args[0], "cd") == 0)
 				change_dir(args);
-			else if (_strcmp(buffer, "echo $?") == 0)
-				printf("exit %d", exit_status);
-			else if (_strcmp(buffer, "echo $$") == 0)
-				printf("%d\n", getppid());
 			else
 				runcmd(args);
 		}

@@ -16,13 +16,12 @@ int _strlen(char *str)
 }
 
 /**
-  * _strcpy - copys str to another
-  * @dest: destination string
-  * @src: the str that we gonna copy
-  *
-  * Return: the pointer to dst
-  */
-
+ * _strcpy - copys str to another
+ * @dest: destination string
+ * @src: the str that we gonna copy
+ *
+ * Return: the pointer to dst
+ */
 
 char *_strcpy(char *dest, char *src)
 {
@@ -54,4 +53,24 @@ int _strcmp(char *s1, char *s2)
 		s2++;
 	}
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
+/**
+ * _strcat - concatenates two strings.
+ * @dest: destination string
+ * @src: source string
+ * Return: pointer to the destination string.
+ */
+char *_strcat(char *dest, char *src)
+{
+	int dest_len = _strlen(dest);
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
+	dest[dest_len + i] = '\0';
+
+	return dest;
 }

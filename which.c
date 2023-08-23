@@ -1,6 +1,5 @@
 #include "shell.h"
 
-// GB var
 int exit_status = 77;
 
 char *which(char *cmd)
@@ -14,7 +13,7 @@ char *which(char *cmd)
     if (!cmd)
         return NULL;
 
-    path = getenv("PATH");
+    path = _getenv("PATH");
     if (!path)
     {
         return NULL;

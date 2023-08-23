@@ -11,25 +11,22 @@
 /* exit */
 extern int exit_status;
 
-
 /* environment */
 extern char **environ;
-
 
 /* macros */
 #define SUCCESS 0
 #define FAILURE -1
 
-
 /* functions */
 char **spliter(char *buffer);
-char* which(char *cmd);
+char *which(char *cmd);
 void runcmd(char **args);
 void change_dir(char **args);
 int space_check(char *buffer);
 char *_strtok(char *str, const char *delim);
-char* _getline(size_t buffer_size);
-
+char *_getline(size_t buffer_size);
+char *_getenv(const char *name);
 
 /* help function */
 int _putchar(char c);

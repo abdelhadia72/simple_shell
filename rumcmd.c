@@ -38,7 +38,7 @@ void runcmd(char **args)
         {
             perror("execve");
             free(path);
-            exit(1);
+            exit(2);
         }
     }
     else

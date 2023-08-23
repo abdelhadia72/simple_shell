@@ -4,3 +4,8 @@ app
 shell
 runner.bash
 .gitignore
+/TEST_SUITES
+TEST_SUITES/
+/TEST_SUITES
+allowed_functions
+runchecker.bash

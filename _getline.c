@@ -2,57 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _getline(char **lineptr, size_t *n, FILE *stream)
-{
+char *_getline(char **buffer, size_t *buffer_size, FILE *stream) {
+    size_t buffer_index = 0;
+    size_t chars_in_buffer = 0;
+    char current_char;
 
-	int bytesRead = 0;
-	size_t totalBytesRead = 0;
-	int ch;
-	char *newLineptr;
+    char *line = NULL;
+    size_t line_length = 0;
 
-	if (lineptr == NULL || n == NULL || stream == NULL)
-	{
-		return -1;
-	}
+    *buffer = (char *)malloc(*buffer_size * sizeof(char));
 
-	if (*lineptr == NULL || *n == 0)
-	{
-		*n = 128;
-		*lineptr = (char *)malloc(*n);
-		if (*lineptr == NULL)
-		{
-			return -1;
-		}
-	}
+    while (1) {
+        if (buffer_index >= chars_in_buffer) {
+            chars_in_buffer = fread(*buffer, sizeof(char), *buffer_size, stream);
+            buffer_index = 0;
 
-	while ((ch = fgetc(stream)) != EOF)
-	{
-		if (totalBytesRead >= *n - 1)
-		{
-			*n *= 2;
-			newLineptr = (char *)realloc(*lineptr, *n);
-			if (newLineptr == NULL)
-			{
-				return -1;
-			}
-			*lineptr = newLineptr;
-		}
+            if (chars_in_buffer == 0) {
+                if (line_length == 0) {
+                    free(*buffer);
+                    return NULL;
+                } else {
+                    break;
+                }
+            }
+        }
 
-		(*lineptr)[totalBytesRead++] = (char)ch;
-		bytesRead++;
+        current_char = (*buffer)[buffer_index++];
+        if (current_char == '\n') {
+            break;
+        }
 
-		if (ch == '\n')
-		{
-			break;
-		}
-	}
+        line = realloc(line, line_length + 1);
+        line[line_length++] = current_char;
+    }
 
-	if (totalBytesRead == 0 && bytesRead == 0)
-	{
-		return -1;
-	}
+    if (line != NULL) {
+        line = realloc(line, line_length + 1);
+        line[line_length] = '\0';
+    }
 
-	(*lineptr)[totalBytesRead] = '\0';
-
-	return totalBytesRead;
+    return line;
 }

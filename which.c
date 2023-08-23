@@ -3,7 +3,7 @@
 // GB var
 int exit_status = 77;
 
-char* which(char *cmd)
+char *which(char *cmd)
 {
     char *path = NULL;
     char *token = NULL;
@@ -31,7 +31,7 @@ char* which(char *cmd)
         strcat(holder, cmd);
         if (access(holder, X_OK) == 0)
         {
-        
+
             free(cp_cmd);
             return (holder);
         }
@@ -39,7 +39,7 @@ char* which(char *cmd)
         free(holder);
         token = strtok(NULL, sp);
     }
-    
+
     free(cp_cmd);
     perror("which");
     return (NULL);

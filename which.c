@@ -18,7 +18,7 @@ char *which(char *cmd)
 	}
 
 	cp_cmd = strdup(cmd);
-	token = strtok(path, sp);
+	token = _strtok(path, sp);
 
 	while (token)
 	{
@@ -34,7 +34,7 @@ char *which(char *cmd)
 		}
 
 		free(holder);
-		token = strtok(NULL, sp);
+		token = _strtok(NULL, sp);
 	}
 
 	free(cp_cmd);

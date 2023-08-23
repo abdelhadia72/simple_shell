@@ -1,5 +1,14 @@
 #include "shell.h"
 
+/**
+ * _getenv - Get the value of an environment variable.
+ * @name: Name of the environment variable.
+ *
+ * Return: Pointer to the value, or NULL if not found.
+ *
+ * Retrieves the value of the environment variable @name.
+ */
+
 char *_getenv(const char *name)
 {
 	int i = 0;

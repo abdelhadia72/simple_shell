@@ -29,7 +29,7 @@ int space_check(char *buffer);
 char *_strtok(char *str, const char *delim);
 int _getline(char **buffer, size_t *buffer_size, FILE *stream);
 char *_getenv(const char *name);
-void printenv();
+void printenv(void);
 
 /* help function */
 int _putchar(char c);

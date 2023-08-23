@@ -2,34 +2,40 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char* _getline(size_t buffer_size)
+char *_getline(size_t buffer_size)
 {
-	char* buffer;
+	char *buffer;
 	size_t buffer_index = 0;
 	size_t chars_in_buffer = 0;
+	char current_char;
 
-	char* line = NULL;
+	char *line = NULL;
 	size_t line_length = 0;
 
-	buffer = (char*)malloc(buffer_size * sizeof(char));
+	buffer = (char *)malloc(buffer_size * sizeof(char));
 
-	while (1) {
-		if (buffer_index >= chars_in_buffer) {
+	while (1)
+	{
+		if (buffer_index >= chars_in_buffer)
+		{
 			chars_in_buffer = read(0, buffer, buffer_size);
 			buffer_index = 0;
 
-			if (chars_in_buffer == 0) {
-				if (line_length == 0) {
+			if (chars_in_buffer == 0)
+			{
+				if (line_length == 0)
+				{
 					free(buffer);
 					return NULL;
-				} else
+				}
+				else
 				{
 					break;
 				}
 			}
 		}
 
-		char current_char = buffer[buffer_index++];
+		current_char = buffer[buffer_index++];
 		if (current_char == '\n')
 		{
 			break;

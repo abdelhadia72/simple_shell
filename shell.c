@@ -15,6 +15,9 @@ int main(int ac, char **av)
 	char **args = {NULL};
 	size_t size = 0;
 
+	(void)ac;
+	(void)av;
+
 	if (isatty(0))
 	{
 		_puts("$ ");
@@ -51,4 +54,6 @@ int main(int ac, char **av)
 		if (isatty(0))
 			_puts("$ ");
 	}
+
+	return (0);
 }

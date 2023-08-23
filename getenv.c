@@ -2,10 +2,11 @@
 
 char *_getenv(const char *name)
 {
+    int i;
     extern char **environ;
     size_t namelen = strlen(name);
 
-    for (int i = 0; environ[i] != NULL; i++)
+    for (i = 0; environ[i] != NULL; i++)
     {
         if (strncmp(environ[i], name, namelen) == 0 && environ[i][namelen] == '=')
         {

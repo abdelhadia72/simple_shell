@@ -19,7 +19,7 @@ char *which(char *cmd)
         return NULL;
     }
 
-    cp_cmd = _strdup(cmd);
+    cp_cmd = strdup(cmd);
     token = _strtok(path, sp);
 
     while (token)

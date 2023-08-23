@@ -3,10 +3,15 @@
 void printenv()
 {
     extern char **environ;
-    char **env;
+    int envIndex;
+    char newlineChar = '\n';
 
-    for (env = environ; *env != NULL; env++)
+    if (!environ)
+        exit(1);
+
+    for (envIndex = 0; environ[envIndex]; envIndex++)
     {
-        printf("%s\n", *env);
+        write(STDOUT_FILENO, environ[envIndex], _strlen(environ[envIndex]));
+        write(STDOUT_FILENO, &newlineChar, 1);
     }
 }

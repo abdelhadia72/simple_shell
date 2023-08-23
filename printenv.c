@@ -3,8 +3,9 @@
 void printenv()
 {
     extern char **environ;
+    char **env;
 
-    for (char **env = environ; *env != NULL; env++)
+    for (env = environ; *env != NULL; env++)
     {
         printf("%s\n", *env);
     }

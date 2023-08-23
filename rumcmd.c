@@ -46,6 +46,7 @@ void runcmd(char **args)
         waitpid(pid, &stat, 0);
     }
 
+    i = 0;
     while (args[i])
     {
         free(args[i]);

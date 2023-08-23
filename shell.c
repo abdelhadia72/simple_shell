@@ -8,48 +8,70 @@
  *
  * Return: Always returns 0.
  */
-
 int main(int ac, char **av)
 {
 	char *buffer = NULL;
-	char **args = {NULL};
+	char **args = NULL;
 	size_t size = 0;
 
 	(void)ac;
 	(void)av;
 
-	if (isatty(0))
+	if (isatty(STDIN_FILENO))
 	{
 		_puts("$ ");
 	}
-	while (getline(&buffer, &size, stdin) != EOF)
+
+	while (1)
 	{
-		buffer[_strlen(buffer) - 1] = '\0';
+		ssize_t chars_read = getline(&buffer, &size, stdin);
+
+		if (chars_read == -1)
+		{
+			if (isatty(STDIN_FILENO))
+			{
+				free(buffer);
+			}
+			exit(SUCCESS);
+		}
+
+		buffer[chars_read - 1] = '\0';
 
 		if (strcmp(buffer, "exit") == 0)
 		{
 			free(buffer);
-			perror(buffer);
-			exit(98);
-			break;
+			exit(SUCCESS);
 		}
+
 		if (!space_check(buffer))
 		{
 			args = spliter(buffer);
 
-			if (strcmp(args[0], "cd") == 0)
-				change_dir(args);
-			else
-				runcmd(args);
-		}
-		else
-		{
-			/*printf("%s\n", buffer);*/
+			if (args[0] != NULL)
+			{
+				if (strcmp(args[0], "cd") == 0)
+				{
+					change_dir(args);
+				}
+				else
+				{
+					runcmd(args);
+				}
+			}
+
+			for (int i = 0; args && args[i]; i++)
+			{
+				free(args[i]);
+			}
+			free(args);
 		}
 
-		if (isatty(0))
+		if (isatty(STDIN_FILENO))
+		{
 			_puts("$ ");
+		}
 	}
 
-	return (0);
+	free(buffer);
+	return 0;
 }

@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	}
 	while (getline(&buffer, &size, stdin) != EOF)
 	{
-		buffer[strlen(buffer) - 1] = '\0';
+		buffer[_strlen(buffer) - 1] = '\0';
 
 		if (strcmp(buffer, "exit") == 0)
 		{

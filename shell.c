@@ -22,11 +22,7 @@ int main(int ac, char **av)
 	{
 		_puts("$ ");
 	}
-<<<<<<< HEAD
-	while (getline(&buffer, &size, stdin) != -1)
-=======
 	while (getline(&buffer, &size, stdin) != EOF)
->>>>>>> d3f3a6e07eb683294b2d5d20811c1c14db592f9c
 	{
 		buffer[_strlen(buffer) - 1] = '\0';
 

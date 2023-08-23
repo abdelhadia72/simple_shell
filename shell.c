@@ -22,7 +22,7 @@ int main(int ac, char **av)
 	{
 		_puts("$ ");
 	}
-	while (_getline(&buffer, &size, stdin) != EOF)
+	while (getline(&buffer, &size, stdin) != EOF)
 	{
 		buffer[_strlen(buffer) - 1] = '\0';
 

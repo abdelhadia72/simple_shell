@@ -44,5 +44,3 @@ char *which(char *cmd)
     perror("which");
     return (NULL);
 }
-
-//! you have to make your own getenv ??!

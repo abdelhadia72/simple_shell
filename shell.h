@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <pwd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 /* exit */
 extern int exit_status;

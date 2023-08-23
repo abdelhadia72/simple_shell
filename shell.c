@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	}
 	while (getline(&buffer, &size, stdin) != EOF)
 	{
-		buffer[_strlen(buffer) - 1] = '\0';
+		buffer[strlen(buffer) - 1] = '\0';
 
 		if (strcmp(buffer, "exit") == 0)
 		{
@@ -35,11 +35,11 @@ int main(int ac, char **av)
 		if (!space_check(buffer))
 		{
 			args = spliter(buffer);
-			if (_strcmp(args[0], "env") == 0)
+			if (strcmp(args[0], "env") == 0)
 			{
 				printenv();
 			}
-			else if (_strcmp(args[0], "cd") == 0)
+			else if (strcmp(args[0], "cd") == 0)
 				change_dir(args);
 			else
 				runcmd(args);

@@ -13,7 +13,7 @@ char *which(char *cmd)
     if (!cmd)
         return NULL;
 
-    path = _getenv("PATH");
+    path = getenv("PATH");
     if (!path)
     {
         return NULL;
@@ -24,10 +24,10 @@ char *which(char *cmd)
 
     while (token)
     {
-        holder = (char *)malloc(_strlen(token) + _strlen(cmd) + 2);
-        _strcpy(holder, token);
-        _strcat(holder, "/");
-        _strcat(holder, cmd);
+        holder = (char *)malloc(strlen(token) + strlen(cmd) + 2);
+        strcpy(holder, token);
+        strcat(holder, "/");
+        strcat(holder, cmd);
         if (access(holder, X_OK) == 0)
         {
 
@@ -36,7 +36,7 @@ char *which(char *cmd)
         }
 
         free(holder);
-        token = _strtok(NULL, sp);
+        token = strtok(NULL, sp);
     }
 
     free(cp_cmd);

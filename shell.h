@@ -27,6 +27,7 @@ int space_check(char *buffer);
 char *_strtok(char *str, const char *delim);
 char *_getline(size_t buffer_size);
 char *_getenv(const char *name);
+void printenv();
 
 /* help function */
 int _putchar(char c);

@@ -35,8 +35,11 @@ int main(int ac, char **av)
 		if (!space_check(buffer))
 		{
 			args = spliter(buffer);
-
-			if (strcmp(args[0], "cd") == 0)
+			if (strcmp(args[0], "env") == 0)
+			{
+				printenv();
+			}
+			else if (strcmp(args[0], "cd") == 0)
 				change_dir(args);
 			else
 				runcmd(args);

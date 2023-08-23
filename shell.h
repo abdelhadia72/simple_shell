@@ -27,7 +27,7 @@ void runcmd(char **args);
 void change_dir(char **args);
 int space_check(char *buffer);
 char *_strtok(char *str, const char *delim);
-char *_getline(size_t buffer_size);
+int _getline(char **lineptr, size_t *n, FILE *stream);
 char *_getenv(const char *name);
 void printenv();
 

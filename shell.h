@@ -34,6 +34,7 @@ void printenv();
 /* help function */
 int _putchar(char c);
 void _puts(char *str);
+char *rm_spaces(char *str);
 
 /* Str function */
 int _strlen(const char *str);

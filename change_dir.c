@@ -5,7 +5,7 @@ void change_dir(char **args)
     char oldpwd[265];
     int i;
 
-    if (!args[1] || strcmp(args[1], "~") == 0)
+    if (!args[1] || strcmp(args[1], "~") == 0 || strcmp(args[1], "--") == 0)
     {
         const char *home_path = getenv("HOME");
 
@@ -18,7 +18,7 @@ void change_dir(char **args)
         }
         else
         {
-             _puts("cd: could not determine home directory");
+            _puts("cd: could not determine home directory");
         }
     }
     else if (strcmp(args[1], "-") == 0)

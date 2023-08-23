@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	{
 		buffer[_strlen(buffer) - 1] = '\0';
 
-		if (_strcmp(buffer, "exit") == 0)
+		if (strcmp(buffer, "exit") == 0)
 		{
 			free(buffer);
 			perror(buffer);
@@ -37,7 +37,7 @@ int main(int ac, char **av)
 		{
 			args = spliter(buffer);
 
-			if (_strcmp(args[0], "cd") == 0)
+			if (strcmp(args[0], "cd") == 0)
 				change_dir(args);
 			else
 				runcmd(args);

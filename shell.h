@@ -33,7 +33,7 @@ int _putchar(char c);
 void _puts(char *str);
 
 /* Str function */
-int _strlen(char *str);
+int _strlen(const char *str);
 char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _atoi(char *nptr);

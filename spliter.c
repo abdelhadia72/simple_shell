@@ -10,11 +10,11 @@ char **spliter(char *buffer)
     int i = 0;
 
     copy_buffer = strdup(buffer);
-    token = _strtok(copy_buffer, sp);
+    token = strtok(copy_buffer, sp);
     while (token != NULL)
     {
         n_char++;
-        token = _strtok(NULL, sp);
+        token = strtok(NULL, sp);
     }
     n_char++;
 
@@ -23,13 +23,13 @@ char **spliter(char *buffer)
     /* /! free before redup */
     free(copy_buffer);
     copy_buffer = strdup(buffer);
-    token = _strtok(copy_buffer, sp);
+    token = strtok(copy_buffer, sp);
     for (i = 0; token != NULL; i++)
     {
-        argv[i] = malloc(strlen(token) + 1);
+        argv[i] = malloc(_strlen(token) + 1);
         _strcpy(argv[i], token);
 
-        token = _strtok(NULL, sp);
+        token = strtok(NULL, sp);
     }
     argv[i] = NULL;
 

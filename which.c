@@ -20,14 +20,14 @@ char *which(char *cmd)
     }
 
     cp_cmd = strdup(cmd);
-    token = _strtok(path, sp);
+    token = strtok(path, sp);
 
     while (token)
     {
-        holder = (char *)malloc(strlen(token) + strlen(cmd) + 2);
-        strcpy(holder, token);
-        strcat(holder, "/");
-        strcat(holder, cmd);
+        holder = (char *)malloc(_strlen(token) + _strlen(cmd) + 2);
+        _strcpy(holder, token);
+        _strcat(holder, "/");
+        _strcat(holder, cmd);
         if (access(holder, X_OK) == 0)
         {
 
@@ -40,6 +40,6 @@ char *which(char *cmd)
     }
 
     free(cp_cmd);
-    perror("which");
+    /* perror("which"); */
     return (NULL);
 }

@@ -4,7 +4,7 @@ char *_getenv(const char *name)
 {
     int i;
     extern char **environ;
-    size_t namelen = strlen(name);
+    size_t namelen = _strlen(name);
 
     for (i = 0; environ[i] != NULL; i++)
     {

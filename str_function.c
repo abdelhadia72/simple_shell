@@ -6,13 +6,16 @@
  * Return: i.
  */
 
-int _strlen(char *str)
+int _strlen(const char *str)
 {
-	int i = 0;
+	const char *ptr = str;
 
-	while (str[i])
-		i++;
-	return (i);
+	while (*ptr)
+	{
+		ptr++;
+	}
+
+	return ptr - str;
 }
 
 /**

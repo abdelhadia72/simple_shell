@@ -29,8 +29,7 @@ int main(int ac, char **av)
 		if (strcmp(buffer, "exit") == 0)
 		{
 			free(buffer);
-			perror(buffer);
-			exit(98);
+			exit(0);
 			break;
 		}
 		if (!space_check(buffer))

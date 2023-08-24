@@ -15,9 +15,11 @@
 
 char *_strtok(char *str, const char *delim)
 {
-	static char *next_token = NULL;
+	static char *next_token;
 	char *token_start;
 	char *token_end;
+
+	next_token = NULL;
 
 	if (str != NULL)
 	{

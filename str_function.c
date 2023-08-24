@@ -15,7 +15,7 @@ int _strlen(const char *str)
 		ptr++;
 	}
 
-	return ptr - str;
+	return (ptr - str);
 }
 
 /**
@@ -75,5 +75,5 @@ char *_strcat(char *dest, char *src)
 	}
 	dest[dest_len + i] = '\0';
 
-	return dest;
+	return (dest);
 }

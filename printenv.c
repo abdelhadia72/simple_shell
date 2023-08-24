@@ -8,12 +8,12 @@
 
 void printenv(void)
 {
-	extern char **environ;
 	char *env_var;
 	char newline = '\n';
 	size_t env_var_len;
 	ssize_t bytes_written;
 	char **env;
+
 	for (env = environ; *env != NULL; env++)
 	{
 		env_var = *env;

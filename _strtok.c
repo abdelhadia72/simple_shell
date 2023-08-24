@@ -6,16 +6,11 @@
  * @delim: Delimiter characters.
  *
  * Return: A pointer to the next token, or NULL if no more tokens.
- *
- * Description: This function tokenizes a string by repeatedly returning
- * portions of the input string, delimited by characters in @delim.
- * The first call to _strtok should pass the input string, subsequent calls
- * should pass NULL as the first argument to continue tokenizing.
  */
 
 char *_strtok(char *str, const char *delim)
 {
-	static char *next_token = NULL;
+	char *next_token = NULL;
 	char *token_start;
 	char *token_end;
 

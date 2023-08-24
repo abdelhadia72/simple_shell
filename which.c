@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * which - Locate the executable of a command in the PATH environment.
+ * @cmd: The command to locate.
+ *
+ * Return: A pointer to the full path
+ */
+
 char *which(char *cmd)
 {
 	char *path = NULL;
@@ -9,12 +16,12 @@ char *which(char *cmd)
 	char *holder = NULL;
 
 	if (!cmd)
-		return NULL;
+		return (NULL);
 
 	path = getenv("PATH");
 	if (!path)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	cp_cmd = strdup(cmd);

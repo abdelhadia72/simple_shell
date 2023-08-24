@@ -21,7 +21,7 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 	char *newLineptr;
 
 	if (lineptr == NULL || n == NULL || stream == NULL)
-		return -1;
+		return (-1);
 	if (*lineptr == NULL || *n == 0)
 	{
 		*n = 128;

@@ -41,11 +41,14 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- * _strncmp - compares first n bytes of s1 and s2
- * @s1: string 1
- * @s2: string 2
- * @n: number of bytes to compare
- * Return: int
+ * _strcmp - Compares two strings.
+ *
+ * @s1: Pointer to the first string.
+ * @s2: Pointer to the second string.
+ *
+ * Return: An integer less than, equal to, or greater than zero
+ *         if s1 is found, respectively, to be less than,
+ *         to match, or be greater than s2.
  */
 
 int _strcmp(char *s1, char *s2)

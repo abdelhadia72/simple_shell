@@ -27,9 +27,7 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 		*n = 128;
 		*lineptr = (char *)malloc(*n);
 		if (*lineptr == NULL)
-		{
-			return -1;
-		}
+			return (-1);
 	}
 
 	while ((ch = fgetc(stream)) != EOF)
@@ -39,9 +37,7 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 			*n *= 2;
 			newLineptr = (char *)realloc(*lineptr, *n);
 			if (newLineptr == NULL)
-			{
-				return -1;
-			}
+				return (-1);
 			*lineptr = newLineptr;
 		}
 
@@ -49,17 +45,13 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 		bytesRead++;
 
 		if (ch == '\n')
-		{
 			break;
-		}
 	}
 
 	if (totalBytesRead == 0 && bytesRead == 0)
-	{
-		return -1;
-	}
+		return (-1);
 
 	(*lineptr)[totalBytesRead] = '\0';
 
-	return totalBytesRead;
+	return (totalBytesRead);
 }

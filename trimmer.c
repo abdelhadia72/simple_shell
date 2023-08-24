@@ -20,7 +20,7 @@ char *rm_spaces(char *str)
 	size_t end;
 
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 
 	len = strlen(str);
 	start = 0;
@@ -34,7 +34,7 @@ char *rm_spaces(char *str)
 	if (start == len)
 	{
 		str[0] = '\0';
-		return str;
+		return (str);
 	}
 
 	while (end > start && isspace((unsigned char)str[end]))
@@ -49,5 +49,5 @@ char *rm_spaces(char *str)
 
 	str[end - start + 1] = '\0';
 
-	return str;
+	return (str);
 }
